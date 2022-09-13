@@ -16,5 +16,6 @@ bins/logic.o: libs/logic.h libs/logic.c libs/structs.h
 	gcc libs/logic.c -c -o bins/logic.o
 
 install: machine
-	cp machine /usr/local/bin/maitu4
-	echo "App installed succesfull with name maitu4"
+	$(shell cp machine /usr/local/bin/maitu4)
+	$(info cp machine /usr/local/bin/maitu4)
+	$(info App installed succesfull with name maitu4)

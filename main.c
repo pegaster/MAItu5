@@ -1,3 +1,6 @@
+// Created by Steve Dneprov for Moscow Aviation Institute
+// In 2022
+// steve.dneprov@gmail.com
 #include <stdio.h>
 #include <stdlib.h>
 #include "libs/myio.h"

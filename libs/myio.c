@@ -8,23 +8,23 @@ int FGetLine(FILE *file, char *string, int length){
     {
         string[end++] = c;
     }
-    if(c == '\0'){
+    if(c == EOF){
         return 1;
     }
-    string[end] = '\0';
+    string[end] = EOF;
     return 0;
 }
 
 int GetLine(char *string, int length){
     int end = 0;
     int c;
-    while ((c = getchar()) != '\n' && c != '\0' && length - end > 2)
+    while ((c = getchar()) != '\n' && c != EOF && length - end > 2)
     {
         string[end++] = c;
     }
-    if(c == '\0'){
+    if(c == EOF){
         return 1;
     }
-    string[end] = '\0';
+    string[end] = EOF;
     return 0;
 }
