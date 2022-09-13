@@ -127,7 +127,8 @@ int ParseFromFile(FILE *filePtr, int *alphabetLengthPtr, char **alphabetPtr, int
 
 int ParseFromTape(int *tapeLengthPtr, int **tapePtr, int alphabetLength, char *alphabet, int *cursorIndexPtr){
     int tapeLength, cursorIndex, end = 0, flag = 1;
-    scanf("%d\n", &tapeLength);
+    scanf("%d", &tapeLength);
+    getchar();
     int *tape = (int *)malloc(sizeof(int) * tapeLength);
     char c;
     int index = -1;
@@ -155,7 +156,7 @@ int ParseFromTape(int *tapeLengthPtr, int **tapePtr, int alphabetLength, char *a
         }
         tape[i] = index; 
     }
-    scanf("%d\n", &cursorIndex);
+    scanf("%d", &cursorIndex);
     *tapeLengthPtr = tapeLength;
     *tapePtr = tape;
     *cursorIndexPtr = cursorIndex;
