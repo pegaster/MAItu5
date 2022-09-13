@@ -3,7 +3,7 @@
 
 int FGetLine(FILE *file, char *string, int length){
     int end = 0;
-    char c;
+    int c;
     while ((c = fgetc(file)) != '\n' && c != '\0' && length - end > 2)
     {
         string[end++] = c;
@@ -17,7 +17,7 @@ int FGetLine(FILE *file, char *string, int length){
 
 int GetLine(char *string, int length){
     int end = 0;
-    char c;
+    int c;
     while ((c = getchar()) != '\n' && c != '\0' && length - end > 2)
     {
         string[end++] = c;
