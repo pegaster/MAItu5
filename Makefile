@@ -14,3 +14,7 @@ bins/parse.o: libs/parse.h libs/parse.c libs/structs.h
 
 bins/logic.o: libs/logic.h libs/logic.c libs/structs.h
 	gcc libs/logic.c -c -o bins/logic.o
+
+install: machine
+	cp machine /usr/local/bin/maitu4
+	echo "App installed succesfull with name maitu4"

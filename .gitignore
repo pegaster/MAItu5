@@ -1,2 +1,2 @@
-bins/*
+bins/*.o
 machine
