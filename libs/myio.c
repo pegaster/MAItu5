@@ -4,11 +4,11 @@
 int FGetLine(FILE *file, char *string, int length){
     int end = 0;
     char c;
-    while ((c = fgetc(file)) != '\n' && c != EOF && length - end > 2)
+    while ((c = fgetc(file)) != '\n' && c != '\0' && length - end > 2)
     {
         string[end++] = c;
     }
-    if(c == EOF){
+    if(c == '\0'){
         return 1;
     }
     string[end] = '\0';
@@ -18,11 +18,11 @@ int FGetLine(FILE *file, char *string, int length){
 int GetLine(char *string, int length){
     int end = 0;
     char c;
-    while ((c = getchar()) != '\n' && c != EOF && length - end > 2)
+    while ((c = getchar()) != '\n' && c != '\0' && length - end > 2)
     {
         string[end++] = c;
     }
-    if(c == EOF){
+    if(c == '\0'){
         return 1;
     }
     string[end] = '\0';

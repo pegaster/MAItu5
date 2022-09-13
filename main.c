@@ -8,7 +8,7 @@
 #define MOV_LEFT 0
 #define DO_NOTHING 2
 #define STOP 3
-// ghghg
+
 int main(int argc, char **argv){
     if(argc < 2){
         printf("No file to intereptate\n");
