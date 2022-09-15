@@ -7,6 +7,7 @@
 #include "libs/structs.h"
 #include "libs/parse.h"
 #include "libs/logic.h"
+#include "libs/tapescreen.h"
 #define MOVE_RIGHT 1
 #define MOV_LEFT 0
 #define DO_NOTHING 2
@@ -70,9 +71,7 @@ int main(int argc, char **argv){
     }
     if(debug){
         printf("cursor index: %d, mode: %d\n", cursorIndex, mode);
-        for(int i = 0; i < tapeLength; i++){
-            printf("%c", alphabet[tape[i]]);
-        }
+        PrintTape(tapeLength, tape, alphabetLength, alphabet, cursorIndex, 1);
         printf("\n");
         if(debug == 2){
             int c = getchar();
@@ -88,9 +87,7 @@ int main(int argc, char **argv){
     while(Execute(tape, tapeLength, &cursorIndex, alphabetLength, alphabet, modesQuantity, instructions, &mode)){
         if(debug){
             printf("cursor index: %d, mode: %d\n", cursorIndex, mode);
-            for(int i = 0; i < tapeLength; i++){
-                printf("%c", alphabet[tape[i]]);
-            }
+            PrintTape(tapeLength, tape, alphabetLength, alphabet, cursorIndex, 1);
             printf("\n");
             if(debug == 2){
                 int c = getchar();
@@ -104,10 +101,7 @@ int main(int argc, char **argv){
     if(debug){
         printf("cursor index: %d, mode: %d\n", cursorIndex, mode);
     }
-    for(int i = 0; i < tapeLength; i++){
-        printf("%c", alphabet[tape[i]]);
-    }
-    printf("\n");
+    PrintTape(tapeLength, tape, alphabetLength, alphabet, cursorIndex, debug);
     for(int i = 0; i < modesQuantity; i++){
         free(instructions[i]);
     }
